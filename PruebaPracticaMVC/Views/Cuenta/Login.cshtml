@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model PruebaPracticaMVC.Models.LoginViewModel
+
+<form asp-action="Login" method="post">
+    <div>
+        <label>Usuario</label>
+        <input asp-for="Usuario" />
+    </div>
+    <div>
+        <label>Contraseña</label>
+        <input asp-for="Password" type="password" />
+    </div>
+    <button type="submit">Iniciar sesión</button>
+</form>

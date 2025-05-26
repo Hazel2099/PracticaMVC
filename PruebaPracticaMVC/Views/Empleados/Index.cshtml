@@ -1,0 +1,37 @@
+﻿@model List<PruebaPracticaMVC.Models.EmpleadoViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Empleados";
+}
+
+<h2>Empleados</h2>
+
+<a class="btn btn-success mb-2" asp-action="AgregarEmpleados">Agregar Empleado</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Cargo</th>
+            <th>Email</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var empleado in Model)
+        {
+            <tr>
+                <td>@empleado.Id</td>
+                <td>@empleado.Nombre</td>
+                <td>@empleado.Cargo</td>
+                <td>@empleado.Email</td>
+                <td>
+                    <a class="btn btn-info btn-sm" asp-action="DetalleEmpleado" asp-route-id="@empleado.Id">Ver</a>
+                    <a class="btn btn-warning btn-sm" asp-action="EditarEmpleado" asp-route-id="@empleado.Id">Editar</a>
+                    <a class="btn btn-danger btn-sm" asp-action="EliminarEmpleado" asp-route-id="@empleado.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

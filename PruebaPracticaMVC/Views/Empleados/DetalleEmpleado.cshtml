@@ -1,0 +1,25 @@
+﻿@model PruebaPracticaMVC.Models.EmpleadoViewModel
+
+@{
+    ViewData["Title"] = "Detalle Empleado";
+}
+
+<h2>Detalle del Empleado</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">ID</dt>
+        <dd class="col-sm-10">@Model.Id</dd>
+
+        <dt class="col-sm-2">Nombre</dt>
+        <dd class="col-sm-10">@Model.Nombre</dd>
+
+        <dt class="col-sm-2">Cargo</dt>
+        <dd class="col-sm-10">@Model.Cargo</dd>
+
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Model.Email</dd>
+    </dl>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
